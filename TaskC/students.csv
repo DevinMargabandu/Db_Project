@@ -1,0 +1,6 @@
+StudentID,FirstName,LastName,Email,Major,GradYear
+1001,Alice,Johnson,alice.j@university.edu,Computer Science,2026
+1002,Bob,Smith,bob.s@university.edu,Business,2025
+1003,Charlie,Brown,charlie.b@university.edu,Arts,2027
+1004,David,Lee,david.l@university.edu,Engineering,2026
+1005,Emma,Davis,emma.d@university.edu,Mathematics,2028

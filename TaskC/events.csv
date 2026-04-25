@@ -1,0 +1,5 @@
+EventID,EventName,EventDate,Location,Description,Capacity,ClubID
+5001,Tech Talk 2026,2026-09-15,Student Union,Annual tech conference,100,101
+5002,Art Exhibition,2026-10-01,Art Gallery,Showcase of student work,50,102
+5003,Hackathon,2026-11-20,Innovation Lab,48-hour coding event,200,101
+5004,Networking Mixer,2026-09-05,Business Center,Connect with alumni,80,103

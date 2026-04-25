@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student Form</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Add New Student</h1>
+            <p>Enter the student details to add to the database.</p>
+        </header>
+
+        <form action="insert_student.php" method="POST">
+            <div class="form-group">
+                <label for="StudentID">Student ID</label>
+                <input type="number" id="StudentID" name="StudentID" placeholder="1001" required>
+            </div>
+
+            <div class="form-group">
+                <label for="FirstName">First Name</label>
+                <input type="text" id="FirstName" name="FirstName" placeholder="John" required>
+            </div>
+
+            <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input type="text" id="LastName" name="LastName" placeholder="Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" id="Email" name="Email" placeholder="john.doe@university.edu" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Major">Major</label>
+                <input type="text" id="Major" name="Major" placeholder="Computer Science" required>
+            </div>
+
+            <div class="form-group">
+                <label for="GradYear">Graduation Year</label>
+                <input type="number" id="GradYear" name="GradYear" placeholder="2026" min="2020" max="2035" required>
+            </div>
+
+            <button type="submit">Add Student</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+
+</html>

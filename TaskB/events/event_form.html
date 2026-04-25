@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event Form</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Create Event</h1>
+            <p>Schedule a new event hosted by a club.</p>
+        </header>
+
+        <form action="insert_event.php" method="POST">
+            <div class="form-group">
+                <label for="EventID">Event ID</label>
+                <input type="number" id="EventID" name="EventID" placeholder="5001" required>
+            </div>
+
+            <div class="form-group">
+                <label for="EventName">Event Name</label>
+                <input type="text" id="EventName" name="EventName" placeholder="Tech Talk 2026" required>
+            </div>
+
+            <div class="form-group">
+                <label for="EventDate">Event Date & Time</label>
+                <input type="date" id="EventDate" name="EventDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Location">Location</label>
+                <input type="text" id="Location" name="Location" placeholder="Student Union, Room 301" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Capacity">Capacity</label>
+                <input type="number" id="Capacity" name="Capacity" placeholder="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ClubID">Hosting Club (Club ID)</label>
+                <input type="number" id="ClubID" name="ClubID" placeholder="101" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea id="Description" name="Description" rows="3"
+                    placeholder="Brief description of the event..."></textarea>
+            </div>
+
+            <button type="submit">Create Event</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+
+</html>

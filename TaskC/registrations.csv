@@ -1,0 +1,7 @@
+StudentId,EventID,RegistrationDate,AttendanceStatus
+1001,5001,2026-08-01,Registered
+1002,5001,2026-08-05,Waitlisted
+1003,5002,2026-09-10,Registered
+1004,5003,2026-10-15,Registered
+1001,5003,2026-10-16,Registered
+1002,5004,2026-08-20,Registered

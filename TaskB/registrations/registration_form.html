@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Event Registration</h1>
+            <p>Register a student for an upcoming event.</p>
+        </header>
+
+        <form action="insert_registration.php" method="POST">
+            <div class="form-group">
+                <label for="StudentId">Student ID</label>
+                <input type="number" id="StudentId" name="StudentId" placeholder="1001" required>
+            </div>
+
+            <div class="form-group">
+                <label for="EventID">Event ID</label>
+                <input type="number" id="EventID" name="EventID" placeholder="5001" required>
+            </div>
+
+            <div class="form-group">
+                <label for="RegistrationDate">Registration Date</label>
+                <input type="date" id="RegistrationDate" name="RegistrationDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="AttendanceStatus">Attendance Status</label>
+                <select id="AttendanceStatus" name="AttendanceStatus">
+                    <option value="Registered">Registered</option>
+                    <option value="Attended">Attended</option>
+                    <option value="No-Show">No-Show</option>
+                    <option value="Waitlisted">Waitlisted</option>
+                </select>
+            </div>
+
+            <button type="submit">Complete Registration</button>
+        </form>
+
+        <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+
+</html>

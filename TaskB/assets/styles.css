@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 3px solid #ff9800;
+    border-radius: 5px;
+}
+
+header h1 {
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+header p {
+    text-align: center;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+.back-link {
+    color: #4caf50;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: #ff9800;
+}
+
+
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    background-color: #ff9800;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    flex: 1 1 200px;
+    border: 2px solid #ff9800;
+}
+
+.dashboard-card:hover {
+    background-color: white;
+    color: #ff9800;
+}
+
+/* Tables representing mocked data */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ff9800;
+    text-align: left;
+}
+
+th {
+    background-color: #4caf50;
+    color: white;
+}
