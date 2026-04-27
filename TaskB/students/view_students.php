@@ -70,11 +70,11 @@ $result = $conn->query($sql);
                 </tbody>
             </table>
         <?php else: ?>
-            <p style="margin-top:20px; padding: 20px; background: #f9f9f9; text-align: center;">No students found in the database. Go ahead and add one!</p>
+            <p style="margin-top:20px; padding: 20px; background: #e3eba5; text-align: center;">No students found in the database. Go ahead and add one!</p>
         <?php endif; ?>
 
         <br>
-        <a href="../index.html" class="back-link" style="margin-top: 2rem;">← Back to Dashboard</a>
+        <a href="../index.php" class="back-link" style="margin-top: 2rem;">← Back to Dashboard</a>
     </div>
 </body>
 </html>
@@ -83,3 +83,4 @@ if(isset($conn)){
     $conn->close(); 
 }
 ?>
+

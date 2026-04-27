@@ -60,7 +60,7 @@ $result = $conn->query($sql);
         <?php endif; ?>
 
         <br>
-        <a href="../index.html" class="back-link" style="margin-top: 2rem;">← Back to Dashboard</a>
+        <a href="../index.php" class="back-link" style="margin-top: 2rem;">← Back to Dashboard</a>
     </div>
 </body>
 </html>
@@ -69,3 +69,4 @@ if(isset($conn)){
     $conn->close(); 
 }
 ?>
+

@@ -2,16 +2,37 @@
 require '../config/db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // 1. Retrieve form data
-    // TODO: Assign variables from $_POST based on event_form.html
-    
-    // 2. Prepare SQL INSERT statement
-    // TODO: Write SQL to insert into the Event table
-    
-    // 3. Execute statement and handle errors
-    // TODO: Execute using $conn
-    
-    echo "<h2>Event insertion script pending implementation by team</h2>";
+    $eventID = intval($_POST['EventID']);
+    $eventName = trim($_POST['EventName']);
+    $eventDate = $_POST['EventDate'];
+    $location = trim($_POST['Location']);
+    $description = trim($_POST['Description']);
+    $capacity = intval($_POST['Capacity']);
+    $clubID = intval($_POST['ClubID']);
+
+    $stmt = $conn->prepare(
+        "INSERT INTO Event (EventID, EventName, EventDate, Location, Description, Capacity, ClubID)
+         VALUES (?, ?, ?, ?, ?, ?, ?)"
+    );
+
+    if ($stmt === false) {
+        die("<h2>Error preparing statement: " . htmlspecialchars($conn->error) . "</h2>");
+    }
+
+    $stmt->bind_param("issssii", $eventID, $eventName, $eventDate, $location, $description, $capacity, $clubID);
+
+    if ($stmt->execute()) {
+        header("Location: view_events.php?msg=created");
+        exit();
+    }
+
+    echo "<h2>Error executing event insertion: " . htmlspecialchars($stmt->error) . "</h2>";
     echo "<a href='event_form.html'>Go Back</a>";
+
+    $stmt->close();
+    $conn->close();
+} else {
+    header("Location: event_form.html");
+    exit();
 }
 ?>

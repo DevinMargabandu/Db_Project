@@ -1,8 +1,8 @@
 <?php
 // Replace with your actual database credentials
-$servername = "localhost";
+$servername = "localhost"; // Update with your actual server name and port if needed 
 $username = "root";
-$password = "";
+$password = "Amorosy";
 $dbname = "university_db"; // Update with your actual database name
 
 // Create connection

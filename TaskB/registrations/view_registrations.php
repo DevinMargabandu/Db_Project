@@ -1,7 +1,6 @@
 <?php
 require '../config/db_connect.php';
 
-// READ: Fetch all registrations
 $sql = "SELECT StudentId, EventID, RegistrationDate, AttendanceStatus FROM Registration";
 $result = $conn->query($sql);
 ?>
@@ -24,13 +23,21 @@ $result = $conn->query($sql);
     </style>
 </head>
 <body>
-    <div class="container" style="max-width: 900px;">
+    <div class="container" style="max-width: 1000px;">
         <header>
             <h1>Event Registrations</h1>
-            <p>View all student registrations.</p>
+            <p>View and manage student registrations.</p>
         </header>
 
-        <a href="registration_form.html" class="back-link" style="display:inline-block; margin-bottom: 15px;">➕ Register Student</a>
+        <?php if(isset($_GET['msg']) && $_GET['msg'] == 'created'): ?>
+            <div class="msg">Registration successfully created!</div>
+        <?php elseif(isset($_GET['msg']) && $_GET['msg'] == 'updated'): ?>
+            <div class="msg">Registration successfully updated!</div>
+        <?php elseif(isset($_GET['msg']) && $_GET['msg'] == 'deleted'): ?>
+            <div class="msg">Registration successfully deleted!</div>
+        <?php endif; ?>
+
+        <a href="registration_form.html" class="back-link" style="display:inline-block; margin-bottom: 15px;">Add Registration</a>
 
         <?php if ($result && $result->num_rows > 0): ?>
             <table>
@@ -40,6 +47,7 @@ $result = $conn->query($sql);
                         <th>Event ID</th>
                         <th>Date Registered</th>
                         <th>Attendance Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,21 +57,25 @@ $result = $conn->query($sql);
                             <td><?php echo htmlspecialchars($row['EventID']); ?></td>
                             <td><?php echo htmlspecialchars($row['RegistrationDate']); ?></td>
                             <td><?php echo htmlspecialchars($row['AttendanceStatus']); ?></td>
+                            <td>
+                                <a href="update_registration.php?student_id=<?php echo urlencode($row['StudentId']); ?>&event_id=<?php echo urlencode($row['EventID']); ?>" class="action-link">Edit</a>
+                                <a href="delete_registration.php?student_id=<?php echo urlencode($row['StudentId']); ?>&event_id=<?php echo urlencode($row['EventID']); ?>" class="action-link delete-btn" onclick="return confirm('Are you sure you want to delete this registration?');">Delete</a>
+                            </td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
             </table>
         <?php else: ?>
-            <p style="margin-top:20px; padding: 20px; background: #f9f9f9; text-align: center;">No registrations found in the database. Go ahead and add one!</p>
+            <p style="margin-top:20px; padding: 20px; background: #f9f9f9; text-align: center;">No registrations found in the database. Go ahead and add one.</p>
         <?php endif; ?>
 
         <br>
-        <a href="../index.html" class="back-link" style="margin-top: 2rem;">← Back to Dashboard</a>
+        <a href="../index.php" class="back-link" style="margin-top: 2rem;">Back to Dashboard</a>
     </div>
 </body>
 </html>
-<?php 
-if(isset($conn)){
-    $conn->close(); 
+<?php
+if (isset($conn)) {
+    $conn->close();
 }
 ?>
