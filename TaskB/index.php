@@ -25,6 +25,8 @@
                 style="background-color: var(--primary); color: rgb(53, 121, 73);">Event Schedule</a>
             <a href="registrations/view_registrations.php" class="dashboard-card"
                 style="background-color: var(--primary); color: rgb(53, 121, 73);">Event Registrations</a>
+            <a href="sql_injection_demo.php" class="dashboard-card"
+                style="background-color: var(--primary); color: rgb(53, 121, 73);">SQL Injection Demo</a>
         </div>
     </div>
 </body>
